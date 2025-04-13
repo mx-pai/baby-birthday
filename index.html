@@ -65,10 +65,12 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>生日快乐，我的宝宝 🎉</h1>
-    <p>愿你永远开心、永远被爱！</p>
-  </header>
+
+
+
+  <audio autoplay loop hidden>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
   <section>
     <h2>我们的小回忆</h2>
@@ -123,6 +125,31 @@
       </div>
     </div>
   </section>
+
+  <audio id="birthdayMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    您的浏览器不支持音频播放。
+  </audio>
+
+  <button id="playPauseButton">播放音乐 🎵</button>
+
+  <script>
+    const audio = document.getElementById("birthdayMusic");
+    const button = document.getElementById("playPauseButton");
+
+    button.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = "暂停音乐 ⏸️";
+      } else {
+        audio.pause();
+        button.textContent = "播放音乐 🎵";
+      }
+    });
+  </script>
+
+
+
 
   <section>
     <h2>写给你的信</h2>
